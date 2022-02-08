@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from fastai.basics import load_learner
 from fastai.vision import open_image
 from flask_cors import CORS,cross_origin
+
 app = Flask(__name__)
 CORS(app, support_credentials=True)
 
