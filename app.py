@@ -2,12 +2,15 @@ from flask import Flask, request, jsonify
 from fastai.basics import load_learner
 from fastai.vision.core import load_image
 from flask_cors import CORS,cross_origin
+from pathlib import Path
 
 app = Flask(__name__)
 CORS(app, support_credentials=True)
 
+path = Path()
+
 # load the learner
-learn = load_learner(path='./models', file='5items_model.pkl')
+learn = load_learner(path/'5items_model.pkl')
 classes = learn.dls.vocab
 
 
