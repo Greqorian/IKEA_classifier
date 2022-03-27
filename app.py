@@ -10,12 +10,12 @@ CORS(app, support_credentials=True)
 path = Path()
 
 # load the learner
-learn = load_learner(path/'5items_model.pkl')
+learn = load_learner(path/'100items_model_.pkl')
 classes = learn.dls.vocab
 
-
+# function to take image and return prediction
 def predict_single(img_file):
-    'function to take image and return prediction'
+    
     prediction = learn.predict(PILImage.create(img_file))
     probs_list = prediction[2].numpy()
     return {
